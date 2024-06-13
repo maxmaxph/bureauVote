@@ -1,0 +1,233 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+header img {
+    max-width: 100px; /* Taille maximum de l'image */
+    height: auto; /* Garder les proportions de l'image */
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2em;
+    color: #007bff;
+}
+
+h2 {
+    color: #034b97;
+}
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 5px;
+}
+
+nav ul li button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2em;
+    width: 100%;
+    max-width: 200px;
+}
+
+nav ul li button:hover {
+    background-color: #0056b3;
+}
+
+.section-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.slot-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.slot-row div {
+    width: 100%;
+    padding: 5px 0;
+}
+
+.slot-row .input-container,
+.slot-row .button-container {
+    width: 100%;
+    margin-bottom: 10px;
+    
+}
+
+.slot-row .input-container input[type="text"] {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.8em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slot-row .input-container input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.slot-row .button-container button {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px 0;
+    font-size: 0.8em;
+}
+
+button#exportPDF {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px 0;
+}
+/* Style pour les créneaux avec un participant inscrit */
+.slot-row[data-participant] {
+    background-color: #f9d596; /* Couleur de fond légèrement différente */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+
+}
+
+button[data-action="reset"] {
+    background-color: #ff9500; /* Couleur orange */
+    color: #ffffff; /* Texte blanc */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2em;
+    width: auto;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .section-container {
+        margin: 20px 20px 20px 20px;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .slot-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .slot-row .input-container,
+    .slot-row .button-container {
+        width: 95%;
+    }
+
+    .slot-row input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Ajout de défilement fluide */
+html {
+    scroll-behavior: smooth;
+}

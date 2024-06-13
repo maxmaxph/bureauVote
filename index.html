@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscriptions pour le bureau de vote</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Blason_de_la_ville_de_Roucourt_%2859%29_Nord-France.svg" alt="Blason de Roucourt" id="blason">
+        <h1>Inscriptions pour le bureau de vote</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><button onclick="scrollToSection('slots-june-30')">30 Juin 2024</button></li>
+            <li><button onclick="scrollToSection('slots-july-7')">7 Juillet 2024</button></li>
+            <li><button onclick="scrollToSection('recap')">Récapitulatif</button></li>
+        </ul>
+        <div><p>Les créneaux en Orange sont déjà attribués</p></div>
+    </nav>
+    
+    <div id="calendar" class="section-container">
+        <div id="slots-june-30">
+            <h2>30 Juin 2024</h2>
+            <!-- Les créneaux du 30 juin seront chargés ici -->
+        </div>
+        <div id="slots-july-7">
+            <h2>7 Juillet 2024</h2>
+            <!-- Les créneaux du 7 juillet seront chargés ici -->
+        </div>
+    </div>
+
+    <!-- Récapitulatif et exportation -->
+    <div id="recap" class="section-container">
+        <h2>Récapitulatif des postes pourvus</h2>
+        <div id="recapContent">
+            <!-- Le récapitulatif sera généré ici -->
+        </div>
+        <button id="exportPDF" class="action-button">Exporter en PDF</button>
+    </div>
+
+    <!-- Modale de confirmation -->
+    <div id="resetModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Voulez-vous vraiment réinitialiser ce créneau ? Assurez-vous d'être [nom du participant] pour supprimer.</p>
+            <button id="confirmReset" class="action-button">Oui</button>
+            <button id="cancelReset" class="action-button">Non</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
